@@ -69,6 +69,7 @@ jobs:
     - name: Run tests
       shell: bash -l {0}
       run: |
+        sudo ln -s /usr/local/bin/gfortran-9 /usr/local/bin/gfortran
         pytest -vvv --cov=despasito --cov-report=xml --color=yes despasito/tests/test_saft*
     - name: CodeCov
       uses: codecov/codecov-action@v1
